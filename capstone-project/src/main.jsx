@@ -5,24 +5,28 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/home/HomeComponent.jsx";
 import NavigationBar from "./routes/navigation/NavigationBar";
 import { SignIn } from "./routes/sign-in/SignIn";
+import { Register } from "./routes/register/Register";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <NavigationBar /> ,
+    element: <NavigationBar />,
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
-        path: '/sign-in',
-        element: <SignIn />
-      }
-    ]
-  }
-])
-
+        path: "/identity/sign-in",
+        element: <SignIn />,
+      },
+      {
+        path: "/identity/register",
+        element: <Register />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
