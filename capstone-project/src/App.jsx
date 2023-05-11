@@ -1,8 +1,9 @@
-import Home from "./routes/home/HomeComponent";
+import { Outlet } from "react-router-dom";
+import { UserProvider } from "./contexts/user.context";
 
 const App = () => {
   return (
-    <Home />
+    <Outlet context={UserProvider} />
   )
 };
 

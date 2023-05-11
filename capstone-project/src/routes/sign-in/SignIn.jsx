@@ -1,7 +1,6 @@
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -9,15 +8,15 @@ import { FormInput } from "../../components/UI/form-input/FormInput";
 import { Button } from "../../components/UI/button/Button";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
-// import { FaFacebookF } from "react-icons/fa";
+
+
+const defaultFormFields = {
+  email: "",
+  password: "",
+};
 
 export const SignIn = () => {
   const navigate = useNavigate();
-
-  const defaultFormFields = {
-    email: "",
-    password: "",
-  };
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
@@ -39,12 +38,10 @@ export const SignIn = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-
-      console.log(response);
 
       resetFormFields();
       navigate("/", { replace: true });
@@ -80,11 +77,8 @@ export const SignIn = () => {
   };
 
   const logGoogleUser = async () => {
-    // return the user object from the data returned after authentication with Google.
-    const { user } = await signInWithGooglePopup();
-
-    //using the 'user' object, call the function to add the user to the db if not already in db.
-    await createUserDocumentFromAuth(user);
+    
+    await signInWithGooglePopup();
     navigate("/", { replace: true });
   };
 

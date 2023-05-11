@@ -11,11 +11,12 @@ import { Button } from "../../components/UI/button/Button";
 
 import { useState } from "react";
 
+
 import { FcGoogle } from "react-icons/fc";
-// import { FaFacebookF } from "react-icons/fa";
 
 export const Register = () => {
   const navigate = useNavigate();
+
 
   const logGoogleUser = async () => {
     try {
@@ -23,7 +24,7 @@ export const Register = () => {
       const { user } = await signInWithGooglePopup();
 
       //using the 'user' object, call the function to add the user to the db.
-      const userDocRef = await createUserDocumentFromAuth(user);
+      await createUserDocumentFromAuth(user);
 
       navigate("/", { replace: true });
     } catch (error) {
@@ -53,7 +54,7 @@ export const Register = () => {
 
   const [validation, setValidation] = useState(validationFields);
 
-  const { emailValidation, passwordValidation } = validation;
+  const { emailValidation } = validation;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -70,6 +71,7 @@ export const Register = () => {
       );
 
       await createUserDocumentFromAuth(user, { firstName, surname });
+
       resetFormFields();
       console.log(user);
 

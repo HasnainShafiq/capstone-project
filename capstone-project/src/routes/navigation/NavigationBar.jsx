@@ -1,42 +1,18 @@
 import { Outlet, Link } from "react-router-dom";
-import { auth } from "../../utils/firebase/firebase.utils";
-import { signOut, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { FaShoppingBasket } from "react-icons/fa";
-import { RiAccountBoxLine } from "react-icons/ri";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
+import { useContext } from "react";
 import { AccountIcon } from "../../components/UI/icons/AccountIcon";
 import ShoppingBag from "../../components/UI/icons/ShoppingBag";
+import { UserContext } from "../../contexts/user.context";
 
 const NavigationBar = () => {
-  const [authUser, setAuthUser] = useState(null);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setAuthUser(user);
-      } else {
-        setAuthUser(null);
-      }
-    });
+  // get currentUser from UserContext. Retrieves latest value because when setCurrentUser is called upon sign-in, it causes any component listening for changes in currentUser to re-run.
+  const { currentUser } = useContext(UserContext);
 
-    return () => {
-      listen();
-    };
-  }, []);
-
-  const userSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        if (signOut) {
-          navigate("/", { replace: true });
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  const signOutHandler = async () => {
+    await signOutUser();
+  }
 
   const linkStyles =
     "text-neutral-50 hover:underline hover:text-neutral-50 decoration-2 transition-all";
@@ -68,7 +44,16 @@ const NavigationBar = () => {
                 About
               </Link>
             </li>
-            {!authUser ? (
+            {/* if a currentUser exists... */}
+            {currentUser ? (
+              <span
+                className={`hover:cursor-pointer ${linkStyles}`}
+                onClick={signOutHandler}
+              >
+                Log out
+              </span>
+            ) : (
+              // otherwise render this...
               <>
                 <li>
                   <Link to="/identity/sign-in" href="" className={linkStyles}>
@@ -81,13 +66,6 @@ const NavigationBar = () => {
                   </Link>
                 </li>
               </>
-            ) : (
-              <span
-                className={`hover:cursor-pointer ${linkStyles}`}
-                onClick={userSignOut}
-              >
-                Log out
-              </span>
             )}
           </ul>
           <div className="flex flex-1 ml-auto justify-end mr-2 md:mr-4 lg:mr-8 text-neutral-50 text-xl text-thin">
