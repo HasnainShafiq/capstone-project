@@ -1,12 +1,21 @@
-function ShoppingBag() {
+import { useState, useContext } from "react";
+import { CartContext } from "../../../contexts/cart.context";
+
+function ShoppingBag({className}) {
+
+  const { cartIsOpen, setCartIsOpen } = useContext(CartContext);
+  const toggleCartIsOpen = () => setCartIsOpen(prevState => !prevState);
+
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.75}
+      strokeWidth={1.5}
       stroke="currentColor"
-      className="w-auto h-6 lg:h-[28px] p-[3px] rounded-sm hover:bg-white hover:cursor-pointer transition hover:text-indigo-900"
+      className={`w-auto h-6 lg:h-[28px] p-[3px] rounded-sm text-neutral-50 hover:bg-white hover:cursor-pointer transition hover:text-indigo-900 ${className}`}
+      onClick={toggleCartIsOpen}
     >
       <path
         strokeLinecap="round"

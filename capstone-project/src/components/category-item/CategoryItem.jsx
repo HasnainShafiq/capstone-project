@@ -14,7 +14,7 @@ const CategoryItem = ({ category }) => {
         </h2>
         <a
           href=""
-          className="uppercase font-body font-bold italic tracking-wider text-neutral-50 border border-white py-2 mt-2 mx-auto px-4 max-w-fit hover:bg-indigo-900 hover:text-neutral-50 transition-colors"
+          className="uppercase font-body font-bold italic tracking-wider text-neutral-50 border border-white py-2 mt-2 mx-auto px-4 max-w-fit text-sm md:text-md lg:text-lg  hover:bg-indigo-900 hover:text-neutral-50 transition-colors"
         >
           Shop now
         </a>

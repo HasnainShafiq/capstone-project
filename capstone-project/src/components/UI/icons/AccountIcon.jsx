@@ -4,9 +4,9 @@ export const AccountIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.75}
+      strokeWidth={1.5}
       stroke="currentColor"
-      className="w-auto h-6 lg:h-[28px] p-[3px] rounded-sm hover:bg-white hover:cursor-pointer transition hover:text-indigo-900"
+      className="w-auto h-6 lg:h-[32px] p-[3px] rounded-sm hover:bg-white hover:cursor-pointer transition hover:text-indigo-900"
     >
       <path
         strokeLinecap="round"

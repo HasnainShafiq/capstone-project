@@ -1,4 +1,4 @@
-export const Button = ({ children, buttonType, ...otherProps }) => {
+export const Button = ({ children, className, buttonType, ...otherProps }) => {
     
     const BUTTON_TYPE_CLASSES = {
         formSubmit: "bg-indigo-800 hover:bg-indigo-900 rounded-sm font-sans uppercase font-bold text-md",
@@ -8,7 +8,7 @@ export const Button = ({ children, buttonType, ...otherProps }) => {
     
     return (
         <button
-            className={`${BUTTON_TYPE_CLASSES[buttonType]}`}
+            className={`${BUTTON_TYPE_CLASSES[buttonType]}${className}`}
             {...otherProps}
           >
             {children}

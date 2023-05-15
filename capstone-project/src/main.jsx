@@ -7,6 +7,9 @@ import NavigationBar from "./routes/navigation/NavigationBar";
 import { SignIn } from "./routes/sign-in/SignIn";
 import { Register } from "./routes/register/Register";
 import { UserProvider } from "./contexts/user.context";
+import { Shop } from "./routes/shop/Shop";
+import { ProductsProvider } from "./contexts/products.context";
+import { CartStateProvider } from "./contexts/cart.context";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/shop",
+        element: <Shop />,
       },
       {
         path: "/identity/sign-in",
@@ -33,7 +40,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* Give all routes access to our currentUser and setCurrentUser values from our UserContext */}
     <UserProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <ProductsProvider>
+        <CartStateProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </CartStateProvider>
+      </ProductsProvider>
     </UserProvider>
   </React.StrictMode>
 );

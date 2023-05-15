@@ -25,6 +25,7 @@ export const UserProvider = ({ children }) => {
         if(user) {
             createUserDocumentFromAuth(user);
         }
+        // we set the value in the useEffect as it centralises the functionality. Otherwise, we would be calling setUser in numerous files. 
         setCurrentUser(user);
       })
     

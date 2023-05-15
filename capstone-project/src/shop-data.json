@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Original Gi - White",
+        "imageUrl": "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+        "price": 65
+    },
+    {
+        "id": 2,
+        "name": "Original Gi - Black",
+        "imageUrl": "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+        "price": 65
+    },
+    {
+        "id": 3,
+        "name": "Original Gi - Blue",
+        "imageUrl": "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+        "price": 65
+    },
+    {
+        "id": 4,
+        "name": "Futuwwa Gi - White",
+        "imageUrl": "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+        "price": 80
+    },
+    {
+        "id": 5,
+        "name": "Futuwwa Gi - Black",
+        "imageUrl": "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+        "price": 80
+    },
+    {
+        "id": 6,
+        "name": "Futuwwa Gi - Blue",
+        "imageUrl": "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+        "price": 80
+    }
+]
