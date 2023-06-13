@@ -1,7 +1,8 @@
 import { ProductCard } from "../UI/product-card/ProductCard";
 import { useContext } from "react";
 import { ProductsContext } from "../../contexts/products.context";
-import './products-carousel.scss'
+import "./products-carousel.scss";
+import { Link } from "react-router-dom";
 
 export const ProductsCarousel = () => {
   const { products } = useContext(ProductsContext);
@@ -13,12 +14,12 @@ export const ProductsCarousel = () => {
           <h2 className="text-left pb-4 text-neutral-50 text-lg md:text-xl font-heading tracking-wide">
             Trending products
           </h2>
-            <a
-              href="#"
-              className="hidden text-sm font-body uppercase font-semibold text-neutral-50 hover:text-neutral-400 sm:block"
-            >
-              See everything <span aria-hidden="true"> &rarr;</span>
-            </a>
+          <a
+            href="#"
+            className="hidden text-sm font-body uppercase font-semibold text-neutral-50 hover:text-neutral-400 sm:block"
+          >
+            See everything <span aria-hidden="true"> &rarr;</span>
+          </a>
         </div>
 
         <div className="relative">
@@ -29,7 +30,9 @@ export const ProductsCarousel = () => {
                   key={product.id}
                   className="inline-flex w-60 md:w-72 h-auto flex-col text-center lg:w-80"
                 >
-                  <ProductCard product={product} />
+                  <Link to={`/products/${product.id}`}>
+                    <ProductCard product={product} />
+                  </Link>
                 </li>
               ))}
             </ul>

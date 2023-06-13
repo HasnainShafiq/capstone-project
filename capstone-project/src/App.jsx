@@ -1,10 +1,7 @@
-import { Outlet } from "react-router-dom";
-import { UserProvider } from "./contexts/user.context";
+import NavigationBar from "./routes/navigation/NavigationBar";
 
 const App = () => {
-  return (
-    <Outlet context={UserProvider} />
-  )
+  return <NavigationBar />;
 };
 
 export default App;

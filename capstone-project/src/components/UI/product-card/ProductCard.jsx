@@ -1,5 +1,14 @@
+import { Button } from "../button/Button";
+import { useContext } from "react";
+import { CartContext } from "../../../contexts/cart.context";
+
 export const ProductCard = ({ product }) => {
   const { name, id, imageUrl, price } = product;
+
+
+  const {addItemToCart} = useContext(CartContext);
+
+  const addProduct = () => addItemToCart(product);
 
   return (
     <div className="flex flex-col w-full overflow-hidden rounded-sm items-center hover:cursor-pointer [&>div]:hover:bg-indigo-950 [&>div]:transition">
@@ -24,6 +33,9 @@ export const ProductCard = ({ product }) => {
           <span className="font-normal font-body"> £{price}</span>
         </p>
       </div>
+      {/* <div>
+        <Button buttonType='formSubmit' onClick={addProduct}>Add to cart</Button>
+      </div> */}
     </div>
   );
 };

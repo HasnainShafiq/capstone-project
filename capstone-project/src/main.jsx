@@ -10,6 +10,7 @@ import { UserProvider } from "./contexts/user.context";
 import { Shop } from "./routes/shop/Shop";
 import { ProductsProvider } from "./contexts/products.context";
 import { CartStateProvider } from "./contexts/cart.context";
+import ProductPage from "./routes/product-page/ProductPage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop />,
+      },
+      {
+        path: "/products/:productId",
+        element: <ProductPage />
       },
       {
         path: "/identity/sign-in",

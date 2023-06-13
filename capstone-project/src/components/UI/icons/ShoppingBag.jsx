@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../../contexts/cart.context";
 
 function ShoppingBag({className}) {
 
-  const { cartIsOpen, setCartIsOpen } = useContext(CartContext);
+  const { setCartIsOpen } = useContext(CartContext);
   const toggleCartIsOpen = () => setCartIsOpen(prevState => !prevState);
 
 

@@ -93,7 +93,9 @@ const NavigationBar = () => {
               </span>
             </div>
           )}
-          <ShoppingBag className="mr-2 md:mr-4 lg:mr-8" />
+          <div className="flex justify-center items-center mr-2 md:mr-4 lg:mr-8">
+            <ShoppingBag />
+          </div>
         </div>
         {cartIsOpen && <CartDropdown />}
       </nav>
