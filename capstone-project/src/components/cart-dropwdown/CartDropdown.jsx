@@ -1,12 +1,13 @@
 import { Button } from "../UI/button/Button";
 import { CartItem } from "../cart-item/CartItem";
 import { CartContext } from "../../contexts/cart.context";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 
-import "./cart-dropdown.scss"
+import "./cart-dropdown.scss";
 
 export const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, total } = useContext(CartContext);
 
   return (
     <>
@@ -24,10 +25,11 @@ export const CartDropdown = () => {
                   <CartItem product={item} />
                 </li>
               ))}
+              <li className="text-sm font-body text-neutral-300 font-bold py-1">Total: £{total}</li>
             </ul>
-            <Button
-              buttonType="formSubmit"
-              className="relative mt-auto justify-self-end mb-0 flex justify-center items-center w-full py-1 font-body font-bold text-neutral-50 text-sm"
+            <Link
+              to={"/checkout"}
+              className="relative mt-auto justify-self-end mb-0 flex justify-center items-center w-full py-1 font-body text-neutral-50 text-sm bg-indigo-800 hover:bg-indigo-900 hover:text-neutral-100 rounded-sm uppercase font-bold text-md"
             >
               Check out
               {/* check mark svg */}
@@ -48,7 +50,7 @@ export const CartDropdown = () => {
                   />
                 </svg>
               </span>
-            </Button>
+            </Link>
           </>
         )}
       </div>

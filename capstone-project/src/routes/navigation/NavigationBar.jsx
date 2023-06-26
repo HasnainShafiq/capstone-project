@@ -36,8 +36,8 @@ const NavigationBar = () => {
           {/* Container for the logo */}
           <div className="logo mr-auto ml-2 flex flex-1 md:ml-6 lg:ml-8">
             <Link to="/">
-              <h1 className="font-heading text-neutral-50 text-xl tracking-tighter">
-                Logo
+              <h1 className="font-heading text-neutral-50 text-md md:text-lg xl:text-xl tracking-wide">
+                Hameem
               </h1>
             </Link>
           </div>

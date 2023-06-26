@@ -1,13 +1,11 @@
 import { useContext } from "react";
 import { ProductsContext } from "../../contexts/products.context";
 import { useParams } from "react-router-dom";
-import { ProductCard } from "../../components/UI/product-card/ProductCard";
 import { Button } from "../../components/UI/button/Button";
 import { CartContext } from "../../contexts/cart.context";
 
 const ProductPage = () => {
   const { products } = useContext(ProductsContext);
-  console.log(products);
   
   const params = useParams();
   

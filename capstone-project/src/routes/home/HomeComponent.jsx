@@ -1,7 +1,6 @@
 import CategoriesMenu from "../../components/categories/CategoriesMenu";
 import { ProductsCarousel } from "../../components/products-carousel/ProductsCarousel";
-import { SignIn } from "../sign-in/SignIn";
-import { Outlet } from "react-router-dom";
+
 
 const Home = () => {
 

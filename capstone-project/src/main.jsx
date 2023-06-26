@@ -11,6 +11,7 @@ import { Shop } from "./routes/shop/Shop";
 import { ProductsProvider } from "./contexts/products.context";
 import { CartStateProvider } from "./contexts/cart.context";
 import ProductPage from "./routes/product-page/ProductPage";
+import { Checkout } from "./routes/checkout/CheckoutPage";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: "/identity/register",
         element: <Register />,
       },
+      {
+        path: "/checkout",
+        element: <Checkout />
+      }
     ],
   },
 ]);
