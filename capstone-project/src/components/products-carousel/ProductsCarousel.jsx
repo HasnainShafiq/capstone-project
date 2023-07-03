@@ -1,11 +1,11 @@
 import { ProductCard } from "../UI/product-card/ProductCard";
 import { useContext } from "react";
-import { ProductsContext } from "../../contexts/products.context";
+import { CategoriesContext } from "../../contexts/categories.context";
 import "./products-carousel.scss";
 import { Link } from "react-router-dom";
 
 export const ProductsCarousel = () => {
-  const { products } = useContext(ProductsContext);
+  const { categoriesMap } = useContext(CategoriesContext);
 
   return (
     <div className="bg-neutral-950 pb-4">
@@ -25,7 +25,7 @@ export const ProductsCarousel = () => {
         <div className="relative">
           <div className="products-container relative -mb-6 w-full overflow-x-auto pb-6">
             <ul role="list" className="inline-flex space-x-6">
-              {products.map((product) => (
+              {/* {categoriesMap.map((product) => (
                 <li
                   key={product.id}
                   className="inline-flex w-60 md:w-72 h-auto flex-col text-center lg:w-80"
@@ -34,7 +34,20 @@ export const ProductsCarousel = () => {
                     <ProductCard product={product} />
                   </Link>
                 </li>
-              ))}
+              ))} */}
+              {products.map((product) => {
+                return (
+                  <li
+                    key={product.id}
+                    className="inline-flex w-60 md:w-72 h-auto flex-col text-center lg:w-80"
+                  >
+                    <Link to={`/products/${product.id}`}>
+                      <ProductCard product={product} />
+                    </Link>
+                  </li>
+              );
+              })}
+              
             </ul>
           </div>
         </div>

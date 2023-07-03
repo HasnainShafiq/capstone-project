@@ -8,7 +8,7 @@ export const Button = ({ children, className, buttonType, ...otherProps }) => {
     
     return (
         <button
-            className={`${BUTTON_TYPE_CLASSES[buttonType]}${className}`}
+            className={`${BUTTON_TYPE_CLASSES[buttonType]} ${className}`}
             {...otherProps}
           >
             {children}

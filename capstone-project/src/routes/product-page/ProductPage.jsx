@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { ProductsContext } from "../../contexts/products.context";
+import { CategoriesContext } from "../../contexts/categories.context";
 import { useParams } from "react-router-dom";
 import { Button } from "../../components/UI/button/Button";
 import { CartContext } from "../../contexts/cart.context";
 
 const ProductPage = () => {
-  const { products } = useContext(ProductsContext);
+  const { products } = useContext(CategoriesContext);
   
   const params = useParams();
   
@@ -28,7 +28,7 @@ const ProductPage = () => {
         <p className="font-body uppercase text-neutral-50">
           Price: £{product.price}
         </p>
-        <Button buttonType='formSubmit' onClick={addProduct}>Add to cart</Button>
+        <Button buttonType='formSubmit' onClick={addProduct} className="text-neutral-50 hover:text-neutral-100">Add to cart</Button>
         </section>
       </div>
     </div>

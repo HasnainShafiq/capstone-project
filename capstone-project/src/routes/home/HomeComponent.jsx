@@ -1,8 +1,14 @@
 import CategoriesMenu from "../../components/categories/CategoriesMenu";
 import { ProductsCarousel } from "../../components/products-carousel/ProductsCarousel";
+import { useContext } from "react";
+import { CategoryPreview } from "../../components/category-preview/CategoryPreview";
+import { CategoriesContext } from "../../contexts/categories.context";
+
 
 
 const Home = () => {
+
+  const { categoriesMap } = useContext(CategoriesContext);
 
   const categories = [
     {
@@ -24,7 +30,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="w-full pb-4">
+      <div className="w-full pb-4 bg-neutral-950">
         <div
           className="relative rounded-sm flex justify-center items-center h-96 md:h-[32rem] lg:h-screen"
           style={{
@@ -50,7 +56,19 @@ const Home = () => {
         </div>
       </div>
       <CategoriesMenu categories={categories} />
-      <ProductsCarousel />
+      <div className="py-8 px-4 w-full sm:py-10 lg:mx-auto lg:max-w-screen-2xl lg:px-8">
+
+      {Object.keys(categoriesMap).map((title) => {
+        const products = categoriesMap[title];
+        return (
+          <CategoryPreview
+          key={title}
+          title={title}
+          products={products}
+          />
+          )
+        })}
+        </div>
     </>
   );
 };

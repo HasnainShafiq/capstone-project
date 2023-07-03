@@ -2,7 +2,7 @@ import { Button } from "../button/Button";
 import { useContext } from "react";
 import { CartContext } from "../../../contexts/cart.context";
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, className }) => {
   const { name, id, imageUrl, price } = product;
 
 
@@ -11,7 +11,7 @@ export const ProductCard = ({ product }) => {
   const addProduct = () => addItemToCart(product);
 
   return (
-    <div className="flex flex-col w-full overflow-hidden rounded-sm items-center hover:cursor-pointer [&>div]:hover:bg-indigo-950 [&>div]:transition">
+    <div className={`flex flex-col w-full overflow-hidden rounded-sm items-center hover:cursor-pointer [&>div]:hover:bg-indigo-950 [&>div]:transition ${className}`}>
       <img
         src={imageUrl}
         className="w-full h-[100%] hover:brightness-90  object-cover"
@@ -21,7 +21,7 @@ export const ProductCard = ({ product }) => {
       />
 
       <div className="flex flex-col space-y-1 justify-center items-center text-neutral-50 w-full font-body uppercase font-bold text-sm h-20 bg-indigo-900 md:flex-row md:space-y-0 md:justify-between md:h-auto md:px-2 md:py-4 md:items-center transition">
-        <h3 className="text-md font-bold font-sans">{name}</h3>
+        <h3 className="text-xs font-bold font-sans sm:text-sm ">{name}</h3>
         <p className="inline-flex text-md items-center justify-around whitespace-pre">
           <span
             className="font-body max-w-fit"

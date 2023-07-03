@@ -8,7 +8,7 @@ import { SignIn } from "./routes/sign-in/SignIn";
 import { Register } from "./routes/register/Register";
 import { UserProvider } from "./contexts/user.context";
 import { Shop } from "./routes/shop/Shop";
-import { ProductsProvider } from "./contexts/products.context";
+import { CategoriesProvider } from "./contexts/categories.context";
 import { CartStateProvider } from "./contexts/cart.context";
 import ProductPage from "./routes/product-page/ProductPage";
 import { Checkout } from "./routes/checkout/CheckoutPage";
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/products/:productId",
-        element: <ProductPage />
+        element: <ProductPage />,
       },
       {
         path: "/identity/sign-in",
@@ -40,8 +40,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/checkout",
-        element: <Checkout />
-      }
+        element: <Checkout />,
+      },
     ],
   },
 ]);
@@ -50,11 +50,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* Give all routes access to our currentUser and setCurrentUser values from our UserContext */}
     <UserProvider>
-      <ProductsProvider>
+      <CategoriesProvider>
         <CartStateProvider>
           <RouterProvider router={router}></RouterProvider>
         </CartStateProvider>
-      </ProductsProvider>
+      </CategoriesProvider>
     </UserProvider>
   </React.StrictMode>
 );
