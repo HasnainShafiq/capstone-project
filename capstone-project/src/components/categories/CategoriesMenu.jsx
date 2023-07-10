@@ -1,7 +1,29 @@
 import CategoryItem from "../category-item/CategoryItem";
 import "./categories-menu.styles.scss";
 
-const CategoriesMenu = ({ categories }) => {
+
+const categories = [
+  {
+    id: 1,
+    title: "kimonos",
+    imageUrl: "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+    route: 'shop/kimonos'
+  },
+  {
+    id: 2,
+    title: "belts",
+    imageUrl: "https://i.ibb.co/VCdMtnt/whitebelt-edit2.jpg",
+    route: 'shop/belts'
+  },
+  {
+    id: 3,
+    title: "Rashguards",
+    imageUrl: "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+  },
+];
+
+const CategoriesMenu = () => {
+
   return (
     <div className="w-full flex justify-center">
       <div className="py-8 px-4 w-full sm:py-10 lg:mx-auto lg:max-w-screen-2xl lg:px-8">

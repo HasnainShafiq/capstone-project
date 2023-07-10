@@ -1,10 +1,17 @@
 import "./category-item.styles.scss";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const CategoryItem = ({ category }) => {
-  const { title, imageUrl } = category;
+  const { title, imageUrl, route } = category;
+
+
+  const navigate = useNavigate();
+
+  const onNavigateHandler = navigate(route);
 
   return (
-    <div className="category-container rounded-sm h-60 md:h-80 lg:h-96">
+    <Link to={route}  className="category-container rounded-sm h-60 md:h-80 lg:h-96">
       <div className="background-image md:shrink-0  bg-cover bg-center" style={{backgroundImage: `url(${imageUrl})`}}>
       </div>
       <div className="category-body-container">
@@ -19,7 +26,7 @@ const CategoryItem = ({ category }) => {
           Shop now
         </a>
       </div>
-    </div>
+    </ Link>
   );
 };
 

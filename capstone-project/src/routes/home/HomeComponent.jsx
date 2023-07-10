@@ -3,30 +3,13 @@ import { ProductsCarousel } from "../../components/products-carousel/ProductsCar
 import { useContext } from "react";
 import { CategoryPreview } from "../../components/category-preview/CategoryPreview";
 import { CategoriesContext } from "../../contexts/categories.context";
+import { Link } from "react-router-dom";
 
 
 
 const Home = () => {
 
   const { categoriesMap } = useContext(CategoriesContext);
-
-  const categories = [
-    {
-      id: 1,
-      title: "Jiu-Jitsu Gi",
-      imageUrl: "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
-    },
-    {
-      id: 2,
-      title: "Belts",
-      imageUrl: "https://i.ibb.co/VCdMtnt/whitebelt-edit2.jpg",
-    },
-    {
-      id: 3,
-      title: "Accessories",
-      imageUrl: "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
-    },
-  ];
 
   return (
     <>
@@ -46,16 +29,16 @@ const Home = () => {
               We are HaMeem BJJ.
             </h1>
             <h3 className="font-heading text-sm md:text-md lg:text-lg xl:text-xl">Faith <span className="inline-block font-sans text-sm md:text-md lg:text-lg xl:text-xl mx-1">x</span> Discipline <span className="inline-block font-sans text-sm md:text-md lg:text-lg xl:text-xl mx-1">x</span> Brotherhood</h3>
-            <a
-              href=""
+            <Link
+              to={"/shop"}
               className="uppercase font-body font-bold italic z-10 tracking-wider text-neutral-50 border border-white py-2 mt-2 mx-auto px-4 max-w-fit text-sm md:text-md lg:text-lg hover:bg-indigo-900 hover:text-neutral-50 transition-colors"
             >
               Shop now
-            </a>
+            </Link>
           </div>
         </div>
       </div>
-      <CategoriesMenu categories={categories} />
+      <CategoriesMenu />
       <div className="py-8 px-4 w-full sm:py-10 lg:mx-auto lg:max-w-screen-2xl lg:px-8">
 
       {Object.keys(categoriesMap).map((title) => {
