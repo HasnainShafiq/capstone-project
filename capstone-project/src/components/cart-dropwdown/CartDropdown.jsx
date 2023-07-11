@@ -13,7 +13,7 @@ export const CartDropdown = () => {
     <>
       <div className="cart-dropdown absolute flex flex-col justify-between items-center top-full right-2 z-20 bg-neutral-900 pt-2 px-2 w-52 lg:w-60 lg:px-3 lg:pb-1 max-h-[400px] overflow-y-scroll">
         {cartItems.length === 0 && (
-          <div className="font-body font-bold py-1 text-neutral-300 text-xs lg:pt-1">
+          <div className="font-body font-bold text-neutral-300 text-xs lg:pt-1">
             <h3>Cart empty. Shop to add items.</h3>
           </div>
         )}

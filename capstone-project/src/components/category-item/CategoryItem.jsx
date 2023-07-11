@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 const CategoryItem = ({ category }) => {
   const { title, imageUrl, route } = category;
 
-
+// causing problems with rendering -> need to figure out how to use it in a useEffect. 
   const navigate = useNavigate();
 
   const onNavigateHandler = navigate(route);
