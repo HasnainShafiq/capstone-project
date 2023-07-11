@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer-base {
+
+  @font-face {
+    font-family: 'Nofex', sans-serif;
+    src: url('assets/fonts/nofex.woff2') format('woff2'),
+    url('assets/fonts/nofex.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Turnpike', sans-serif;
+    src: url('assets/fonts/turnpike-webfont.woff2') format('woff2'),
+    url('assets/fonts/turnpike-webfont.woff') format('woff');
+  }
+
+
+  @font-face {
+    font-family: 'Brown-Font', sans-serif;
+    src: url('assets/fonts/brown-regular.woff2') format('woff2'),
+    url('assets/fonts/brown-regular.woff') format('woff');
+  }
+  
+}
 * {
   box-sizing: border-box;
 }
