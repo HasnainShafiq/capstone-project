@@ -20,7 +20,7 @@ export const ProductCard = ({ product, className }) => {
       `}
       />
 
-      <div className="flex flex-col space-y-1 justify-center items-center text-neutral-50 w-full font-body uppercase font-bold text-sm h-20 bg-indigo-900 md:flex-row md:space-y-0 md:justify-between md:h-auto md:px-2 md:py-4 md:items-center transition">
+      <div className="flex flex-col space-y-1 justify-center items-center text-neutral-50 w-full font-body uppercase font-bold text-sm h-16 bg-indigo-900 md:flex-row md:space-y-0 md:justify-between md:h-auto md:px-2 md:py-4 md:items-center transition">
         <h3 className="text-xs font-bold font-sans sm:text-sm ">{name}</h3>
         <p className="inline-flex text-md items-center justify-around whitespace-pre">
           <span
