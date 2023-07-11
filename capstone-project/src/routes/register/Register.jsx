@@ -102,10 +102,10 @@ export const Register = () => {
   return (
     <div className="font-heading text-neutral-50 h-screen flex flex-col px-4 mx-auto place-content-center place-items-center sm:w-3/4">
       <div className="mb-8">
-        <h1 className="text-3xl">Hameem BJJ</h1>
+        <h1 className="text-3xl uppercase">Hameem BJJ</h1>
       </div>
       <div className="w-full flex flex-col place-items-center py-8 bg-neutral-900 rounded-sm sm:px-2 sm:w-5/6 md:w-9/12 max-w-md">
-        <h2 className="text-md tracking-widest">register with email</h2>
+        <h2 className="text-md tracking-widest uppercase">register with email</h2>
 
         <form
           action=""
@@ -216,7 +216,7 @@ export const Register = () => {
           </Button>
         </form>
 
-        <h2 className="text-md mt-8 tracking-widest">Or Sign up with...</h2>
+        <h2 className="text-md mt-8 tracking-widest uppercase">Or Sign up with...</h2>
 
         {/* sign in with Google popup */}
         <Button
