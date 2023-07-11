@@ -6,21 +6,21 @@
 
   @font-face {
     font-family: 'Nofex', sans-serif;
-    src: url('assets/fonts/nofex.woff2') format('woff2'),
-    url('assets/fonts/nofex.woff') format('woff');
+    src: url('fonts/nofex.woff2') format('woff2'),
+    url('fonts/nofex.woff') format('woff');
   }
 
   @font-face {
     font-family: 'Turnpike', sans-serif;
-    src: url('assets/fonts/turnpike-webfont.woff2') format('woff2'),
-    url('assets/fonts/turnpike-webfont.woff') format('woff');
+    src: url('fonts/turnpike-webfont.woff2') format('woff2'),
+    url('fonts/turnpike-webfont.woff') format('woff');
   }
 
 
   @font-face {
     font-family: 'Brown-Font', sans-serif;
-    src: url('assets/fonts/brown-regular.woff2') format('woff2'),
-    url('assets/fonts/brown-regular.woff') format('woff');
+    src: url('fonts/brown-regular.woff2') format('woff2'),
+    url('fonts/brown-regular.woff') format('woff');
   }
 
   h1, h2 {
@@ -28,7 +28,7 @@
   }
 
   h3, p, span {
-    @apply font-body;
+    @apply font-body
   }
   
 }
