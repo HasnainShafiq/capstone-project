@@ -5,13 +5,32 @@ import { AccountIcon } from "../../components/UI/icons/AccountIcon";
 import ShoppingBag from "../../components/UI/icons/ShoppingBag";
 import { CartDropdown } from "../../components/cart-dropwdown/CartDropdown";
 import { UserContext } from "../../contexts/user.context";
-// import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CartContext } from "../../contexts/cart.context";
 
 const NavigationBar = () => {
   // get currentUser from UserContext. Retrieves latest value because when setCurrentUser is called upon sign-in, it causes any component listening for changes in currentUser to re-run.
   const { currentUser } = useContext(UserContext);
-  const { cartIsOpen } = useContext(CartContext);
+  const { cartIsOpen, setCartIsOpen } = useContext(CartContext);
+
+  const [accountIsOpen, setAccountIsOpen] = useState(false);
+
+  const accountIsOpenHandler = () => {
+
+    if (cartIsOpen) {
+      setCartIsOpen(prevState => !prevState)
+    }
+
+    setAccountIsOpen(prevState => !prevState)
+  }
+
+  useEffect(() => {
+    if (cartIsOpen) {
+      if (accountIsOpen) {
+        setAccountIsOpen(prevState => !prevState)
+      }
+    }
+  }, [cartIsOpen])
 
   const signOutHandler = async () => {
     await signOutUser();
@@ -72,9 +91,15 @@ const NavigationBar = () => {
           ) : (
             // otherwise render this...
             <div className="flex flex-1 justify-end items-center sm:space-x-4 mr-2 md:mr-4 ml-auto text-neutral-50">
-              <div className="block min-[660px]:hidden">
+              <div onClick={accountIsOpenHandler} className="block min-[660px]:hidden">
                 <AccountIcon />
               </div>
+              {accountIsOpen && (
+                <div className="absolute top-full mt-4 right-1 flex flex-col text-xs bg-neutral-900 text-neutral-300 font-heading uppercase px-6 py-4 gap-y-1 rounded-sm">
+                  <Link to={"/identity/sign-in"}>Sign in</Link>
+                  <Link to={"/identity/register"}>Register</Link>
+                  </div>
+              )}
               <span className="hidden min-[660px]:inline-flex font-body uppercase text-neutral-200 text-xs">
                 <Link
                   to="/identity/sign-in"
