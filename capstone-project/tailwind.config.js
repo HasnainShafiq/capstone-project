@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["Nofex", "Turnpike", "Draper", "sans-serif"],
+        heading: ["Nofex", "sans-serif"],
         body: ["Brown-Font", "sans-serif"],
       },
       colors: {
