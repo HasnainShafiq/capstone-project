@@ -55,7 +55,7 @@ const NavigationBar = () => {
           {/* Container for the logo */}
           <div className="logo mr-auto ml-2 flex flex-1 md:ml-6 lg:ml-8">
             <Link to="/">
-              <h1 className="font-Nofex text-neutral-50 text-md md:text-lg xl:text-xl tracking-wide">
+              <h1 className="font-heading text-neutral-50 text-md md:text-lg xl:text-xl tracking-wide">
                 Hameem
               </h1>
             </Link>
@@ -95,7 +95,7 @@ const NavigationBar = () => {
                 <AccountIcon />
               </div>
               {accountIsOpen && (
-                <div className="absolute top-full mt-4 right-1 flex flex-col text-xs bg-neutral-900 text-neutral-300 font-Nofex uppercase px-6 py-4 gap-y-1 rounded-sm">
+                <div className="absolute top-full mt-4 right-1 flex flex-col text-xs bg-neutral-900 text-neutral-300 font-heading uppercase px-6 py-4 gap-y-1 rounded-sm">
                   <Link to={"/identity/sign-in"}>Sign in</Link>
                   <Link to={"/identity/register"}>Register</Link>
                   </div>

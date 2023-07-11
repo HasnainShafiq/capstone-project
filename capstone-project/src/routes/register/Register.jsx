@@ -100,7 +100,7 @@ export const Register = () => {
   // [name]: value is same as prevState[name]: value
 
   return (
-    <div className="font-Nofex text-neutral-50 h-screen flex flex-col px-4 mx-auto place-content-center place-items-center sm:w-3/4">
+    <div className="font-heading text-neutral-50 h-screen flex flex-col px-4 mx-auto place-content-center place-items-center sm:w-3/4">
       <div className="mb-8">
         <h1 className="text-3xl">Hameem BJJ</h1>
       </div>

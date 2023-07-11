@@ -15,7 +15,7 @@ const CategoryItem = ({ category }) => {
       <div className="background-image md:shrink-0  bg-cover bg-center" style={{backgroundImage: `url(${imageUrl})`}}>
       </div>
       <div className="category-body-container">
-        <h2 className="font-Nofex uppercase tracking-wide text-neutral-100 text-lg font-bold md:text-xl lg:text-2xl">
+        <h2 className="font-heading uppercase tracking-wide text-neutral-100 text-lg font-bold md:text-xl lg:text-2xl">
           {" "}
           {title}{" "}
         </h2>

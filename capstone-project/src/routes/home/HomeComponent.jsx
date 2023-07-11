@@ -25,10 +25,10 @@ const Home = () => {
           }}
         >
           <div className="flex flex-col justify-center mx-auto items-center  max-w-md relative text-neutral-300 py-10 lg:max-w-2xl xl:max-w-3xl">
-            <h1 className="font-Nofex tracking-tight text-5xl text-center text-neutral-50 uppercase z-10 lg:text-7xl">
+            <h1 className="font-heading tracking-tight text-5xl text-center text-neutral-50 uppercase z-10 lg:text-7xl">
               We are HaMeem BJJ.
             </h1>
-            <h3 className="font-Nofex text-sm md:text-md lg:text-lg xl:text-xl">Faith <span className="inline-block font-sans text-sm md:text-md lg:text-lg xl:text-xl mx-1">x</span> Discipline <span className="inline-block font-sans text-sm md:text-md lg:text-lg xl:text-xl mx-1">x</span> Brotherhood</h3>
+            <h3 className="font-heading text-sm md:text-md lg:text-lg xl:text-xl">Faith <span className="inline-block font-sans text-sm md:text-md lg:text-lg xl:text-xl mx-1">x</span> Discipline <span className="inline-block font-sans text-sm md:text-md lg:text-lg xl:text-xl mx-1">x</span> Brotherhood</h3>
             <Link
               to={"/shop"}
               className="uppercase font-body font-bold italic z-10 tracking-wider text-neutral-50 border border-white py-2 mt-2 mx-auto px-4 max-w-fit text-sm md:text-md lg:text-lg hover:bg-indigo-900 hover:text-neutral-50 transition-colors"
