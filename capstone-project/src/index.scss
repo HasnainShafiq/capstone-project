@@ -2,10 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer-base {
-
   @font-face {
-    font-family: 'Nofex', sans-serif;
+    font-family: Nofex, sans-serif;
     src: url('fonts/nofex.woff2') format('woff2'),
     url('fonts/nofex.woff') format('woff');
   }
@@ -23,15 +21,8 @@
     url('fonts/brown-regular.woff') format('woff');
   }
 
-  h1, h2 {
-    @apply font-heading;
-  }
-
-  h3, p, span {
-    @apply font-body
-  }
   
-}
+
 * {
   box-sizing: border-box;
 }
