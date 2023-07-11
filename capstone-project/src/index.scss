@@ -2,19 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-  @font-face {
-    font-family: "Nofex", sans-serif;
-    src: url('../dist/assets/fonts/Nofex.otf') format("opentype");
-  }
 
-
-  @font-face {
-    font-family: "Brown-Font", sans-serif;
-    src: url('../dist/assets/fonts/BrownMedium\ Regular.ttf') format("truetype");
-  }
+@layer base {
 
   
-
+  @font-face {
+    font-family: "Nofex", sans-serif;
+    src: url('/fonts/Nofex.otf') format("opentype");
+  }
+  
+  
+  @font-face {
+    font-family: "Brown-Font", sans-serif;
+    src: url('/fonts/BrownMedium\ Regular.ttf') format("truetype");
+  }
+  
+  
+}
+  
 * {
   box-sizing: border-box;
 }
