@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["Russo One", "sans-serif"],
+        heading: ['"Russo One"', "sans-serif"],
         body: ["Brown-Font", "sans-serif"],
       },
       colors: {
