@@ -11,7 +11,7 @@ export const ProductsCarousel = () => {
     <div className="bg-neutral-950 pb-4">
       <div className="py-8 px-4 sm:py-10 lg:mx-auto lg:max-w-screen-2xl lg:px-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-left pb-4 text-neutral-50 text-lg md:text-xl font-heading tracking-wide">
+          <h2 className="text-left pb-4 text-neutral-50 text-lg md:text-xl font-Nofex tracking-wide">
             Trending products
           </h2>
           <a

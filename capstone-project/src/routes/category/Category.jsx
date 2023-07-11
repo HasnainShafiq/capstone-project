@@ -22,7 +22,7 @@ export const Category = () => {
 
         <div className="w-full bg-neutral-950 flex justify-center">
       <div className="py-8 px-4 w-full sm:py-10 lg:mx-auto lg:max-w-screen-2xl lg:px-8">
-          <h1 className="text-left pb-4 text-neutral-50 text-lg md:text-xl font-heading tracking-wide">
+          <h1 className="text-left pb-4 text-neutral-50 text-lg md:text-xl font-Nofex tracking-wide">
             {category}
           </h1>
 

@@ -7,7 +7,7 @@ export const CategoryPreview = ({title, products, className}) => {
     return (
         <>
         <div className="flex items-baseline justify-between">
-          <h2 className="text-left pb-4 text-neutral-50 text-sm md:text-base font-heading tracking-wide">
+          <h2 className="text-left pb-4 text-neutral-50 text-sm md:text-base font-Nofex tracking-wide">
             {title}
           </h2>
           <Link

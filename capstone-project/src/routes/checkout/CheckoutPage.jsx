@@ -16,7 +16,7 @@ export const Checkout = () => {
   } = useContext(CartContext);
 
   return (
-    <div className="font-heading h-screen bg-neutral-950 text-neutral-50 flex flex-col px-4 items-center justify-items-center">
+    <div className="font-Nofex h-screen bg-neutral-950 text-neutral-50 flex flex-col px-4 items-center justify-items-center">
       {cartItems.length === 0 && (
         <div className="flex flex-col h-full justify-center">
           <h1>Cart is empty. Add some products.</h1>
@@ -24,7 +24,7 @@ export const Checkout = () => {
       )}
       {cartItems.length > 0 && (
         <>
-          <h1 className="font-heading text-xl tracking-wide py-4">Checkout</h1>
+          <h1 className="font-Nofex text-xl tracking-wide py-4">Checkout</h1>
           <div className="flex mx-auto pt-4 max-w-screen-2xl">
             {/* <div className=" col-start-1">
 
