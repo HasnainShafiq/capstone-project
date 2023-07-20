@@ -6,7 +6,7 @@ import ShoppingBag from "../../components/UI/icons/ShoppingBag";
 import { CartDropdown } from "../../components/cart-dropwdown/CartDropdown";
 import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
-import { AccountContext } from "../../contexts/account.context";
+
 
 const NavigationBar = () => {
   // get currentUser from UserContext. Retrieves latest value because when setCurrentUser is called upon sign-in, it causes any component listening for changes in currentUser to re-run.
