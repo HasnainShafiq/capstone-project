@@ -20,7 +20,7 @@ const location = useLocation();
           >
             <span>See everything</span> <span aria-hidden="true"> &rarr;</span>
           </Link> : <Link
-            to={`shop/${title}`}
+            to={`/shop/${title}`}
             className="inline-flex items-baseline gap-x-1 text-sm font-body uppercase font-semibold text-neutral-50 hover:text-neutral-400"
           >
             <span>See everything</span> <span aria-hidden="true"> &rarr;</span>
@@ -32,9 +32,9 @@ const location = useLocation();
                 {
                     products
                     .filter((_, index) => index < 4)
-                    .map((product) => <Link key={product.id} to={`/shop/${title}/${product.id}`}>
-                    <ProductCard className="md:max-h-96 lg:max-h-none" product={product} />
-                  </Link> )
+                    .map((product) => 
+                    <ProductCard className="md:max-h-96 lg:max-h-none" key={product.id} product={product} />
+                  )
                 }
             </div>
             </>

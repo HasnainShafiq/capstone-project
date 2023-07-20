@@ -100,9 +100,9 @@ export const Register = () => {
   // [name]: value is same as prevState[name]: value
 
   return (
-    <div className="font-heading text-neutral-50 h-screen flex flex-col px-4 mx-auto place-content-center place-items-center sm:w-3/4">
+    <div className="font-heading text-neutral-50 flex flex-col py-8 px-4 mx-auto place-content-center place-items-center sm:w-3/4">
       <div className="mb-8">
-        <h1 className="text-3xl uppercase">Hameem BJJ</h1>
+        <h1 className="text-3xl font-heading uppercase">Hameem BJJ</h1>
       </div>
       <div className="w-full flex flex-col place-items-center py-8 bg-neutral-900 rounded-sm sm:px-2 sm:w-5/6 md:w-9/12 max-w-md">
         <h2 className="text-md tracking-widest uppercase">register with email</h2>

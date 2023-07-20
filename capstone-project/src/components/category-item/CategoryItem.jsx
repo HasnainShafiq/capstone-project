@@ -1,17 +1,13 @@
 import "./category-item.styles.scss";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CategoryItem = ({ category }) => {
   const { title, imageUrl, route } = category;
 
-// causing problems with rendering -> need to figure out how to use it in a useEffect. 
-  const navigate = useNavigate();
-
-  const onNavigateHandler = navigate(route);
 
   return (
-    <Link to={route}  className="category-container rounded-sm h-60 md:h-80 lg:h-96">
+    <div  className="category-container rounded-sm h-60 md:h-80 lg:h-96">
       <div className="background-image md:shrink-0  bg-cover bg-center" style={{backgroundImage: `url(${imageUrl})`}}>
       </div>
       <div className="category-body-container">
@@ -19,14 +15,14 @@ const CategoryItem = ({ category }) => {
           {" "}
           {title}{" "}
         </h2>
-        <a
+        <Link to={route}
           href=""
           className="uppercase font-body font-bold italic tracking-wider text-neutral-50 border border-white py-2 mt-2 mx-auto px-4 max-w-fit text-sm md:text-md lg:text-lg  hover:bg-indigo-900 hover:text-neutral-50 transition-colors"
         >
           Shop now
-        </a>
+        </Link>
       </div>
-    </ Link>
+    </ div>
   );
 };
 

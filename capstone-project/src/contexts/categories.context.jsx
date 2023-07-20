@@ -28,7 +28,6 @@ export const CategoriesProvider = ({children}) => {
     }, []);
 
 
-    // we make value an object because our context is passed an object with "categoriesMap": []. In order to overwrite this, we need to pass it a new object with a "categoriesMap": [array] key-value pair but with the array containing the shop data instead of an empty array. 
     const value = {categoriesMap};
 
     return <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>

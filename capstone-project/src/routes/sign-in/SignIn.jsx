@@ -83,7 +83,7 @@ export const SignIn = () => {
   };
 
   return (
-    <div className="font-heading text-neutral-50 h-screen flex flex-col px-4 mx-auto place-content-center place-items-center sm:w-3/4">
+    <div className="font-heading text-neutral-50 h-screen flex flex-col py-8 px-4 mx-auto place-content-center place-items-center sm:w-3/4">
       <div className="mb-8">
         <h1 className="text-3xl font-heading uppercase">Hameem BJJ</h1>
       </div>

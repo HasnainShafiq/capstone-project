@@ -3,8 +3,8 @@ import { CartContext } from "../../../contexts/cart.context";
 
 function ShoppingBag({className}) {
 
-  const { setCartIsOpen } = useContext(CartContext);
-  const toggleCartIsOpen = () => setCartIsOpen(prevState => !prevState);
+  // const { setCartIsOpen } = useContext(CartContext);
+  // const toggleCartIsOpen = () => setCartIsOpen(prevState => !prevState);
 
 
   return (
@@ -15,7 +15,6 @@ function ShoppingBag({className}) {
       strokeWidth={1.5}
       stroke="currentColor"
       className={`w-auto h-6 lg:h-[28px] p-[3px] rounded-sm text-neutral-50 hover:bg-white hover:cursor-pointer transition hover:text-indigo-900 ${className}`}
-      onClick={toggleCartIsOpen}
     >
       <path
         strokeLinecap="round"

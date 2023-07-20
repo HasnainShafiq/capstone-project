@@ -1,36 +1,43 @@
 import { Outlet, Link } from "react-router-dom";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AccountIcon } from "../../components/UI/icons/AccountIcon";
 import ShoppingBag from "../../components/UI/icons/ShoppingBag";
 import { CartDropdown } from "../../components/cart-dropwdown/CartDropdown";
 import { UserContext } from "../../contexts/user.context";
-import { useState, useEffect } from "react";
 import { CartContext } from "../../contexts/cart.context";
+import { AccountContext } from "../../contexts/account.context";
 
 const NavigationBar = () => {
   // get currentUser from UserContext. Retrieves latest value because when setCurrentUser is called upon sign-in, it causes any component listening for changes in currentUser to re-run.
   const { currentUser } = useContext(UserContext);
   const { cartIsOpen, setCartIsOpen } = useContext(CartContext);
 
+
+  const toggleShoppingBag = () => {
+  
+    if (accountIsOpen) {
+      setAccountIsOpen(prevState => !prevState);
+    }
+
+
+    setCartIsOpen(prevState => !prevState)
+  
+  };
+
+  
   const [accountIsOpen, setAccountIsOpen] = useState(false);
 
-  const accountIsOpenHandler = () => {
-
+  const toggleAccount = () => {
+  
     if (cartIsOpen) {
       setCartIsOpen(prevState => !prevState)
     }
 
     setAccountIsOpen(prevState => !prevState)
+  
   }
 
-  useEffect(() => {
-    if (cartIsOpen) {
-      if (accountIsOpen) {
-        setAccountIsOpen(prevState => !prevState)
-      }
-    }
-  }, [cartIsOpen])
 
   const signOutHandler = async () => {
     await signOutUser();
@@ -91,11 +98,11 @@ const NavigationBar = () => {
           ) : (
             // otherwise render this...
             <div className="flex flex-1 justify-end items-center sm:space-x-4 mr-2 md:mr-4 ml-auto text-neutral-50">
-              <div onClick={accountIsOpenHandler} className="block min-[660px]:hidden">
+              <div onClick={toggleAccount}  className="block min-[660px]:hidden">
                 <AccountIcon />
               </div>
               {accountIsOpen && (
-                <div className="absolute top-full mt-4 right-1 flex flex-col text-xs bg-neutral-900 text-neutral-300 font-heading uppercase px-6 py-4 gap-y-1 rounded-sm">
+                <div className="absolute z-10 top-full mt-4 right-1 flex flex-col text-xs bg-neutral-900 text-neutral-300 font-heading uppercase px-6 py-4 gap-y-1 rounded-sm">
                   <Link to={"/identity/sign-in"}>Sign in</Link>
                   <Link to={"/identity/register"}>Register</Link>
                   </div>
@@ -118,7 +125,7 @@ const NavigationBar = () => {
               </span>
             </div>
           )}
-          <div className="flex justify-center items-center mr-2 md:mr-4 lg:mr-8">
+          <div onClick={toggleShoppingBag} className="flex justify-center min-[660px]:inline-flex items-center mr-2 md:mr-4 lg:mr-8">
             <ShoppingBag />
           </div>
         </div>

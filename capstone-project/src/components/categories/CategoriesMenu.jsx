@@ -19,6 +19,7 @@ const categories = [
     id: 3,
     title: "Rashguards",
     imageUrl: "https://i.ibb.co/BPK6QL6/42971bfb5d830c05efaa9f45b5e72b08.jpg",
+    route: '/'
   },
 ];
 

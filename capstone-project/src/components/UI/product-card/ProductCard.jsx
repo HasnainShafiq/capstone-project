@@ -11,7 +11,10 @@ export const ProductCard = ({ product, className }) => {
   const addProduct = () => addItemToCart(product);
 
   return (
-    <div className={`flex flex-col w-full overflow-hidden rounded-sm items-center hover:cursor-pointer [&>div]:hover:bg-indigo-950 [&>div]:transition ${className}`}>
+    <div className={`flex flex-col relative w-full overflow-hidden rounded-sm items-center group [&>div]:hover:bg-indigo-950 [&>div]:transition ${className}`}>
+
+        <span onClick={addProduct} className="hidden absolute z-10 top-1/2 transform -translate-y-1/2 group-hover:block group-active:block group-focus:block uppercase font-body font-bold tracking-wider text-neutral-50 border border-white py-2 mx-auto px-4 max-w-fit text-sm md:text-md lg:text-lg hover:bg-indigo-900 focus-within:bg-indigo-900 focus:bg-indigo-900 active:bg-indigo-900 hover:cursor-pointer hover:text-neutral-50 transition-colors">ADD TO CART</span>
+ 
       <img
         src={imageUrl}
         className="w-full h-[100%] hover:brightness-90  object-cover"
